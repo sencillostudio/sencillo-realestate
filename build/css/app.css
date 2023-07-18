@@ -7,3 +7,10 @@ h1 {
   padding: 5rem;
   background: #0c0fa8;
 }
+
+.heroSection {
+  color: #e2e2e2;
+  background: url("../../src/img/misc/hero.webp");
+  background-size: cover;
+  background-position: center;
+}
