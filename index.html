@@ -12,6 +12,7 @@
     <link href="build/css/app.css" rel="stylesheet">
 
     <title>Hello, world!</title>
+    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,11 +40,86 @@
       </div>
     </nav>
 
-    <div class="heroSection p-5 mb-4">
+    <div class="heroSection p-5">
       <div class="container py-5">
         <h1 class="display-5 fw-bold">Sencillo Real Estate</h1>
         <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla, facere consequatur amet voluptates a eos, quos quae odio quidem aperiam excepturi! Delectus consequatur quasi ad saepe harum similique accusantium!</p>
       </div>
+    </div>
+
+    <div id="featuredSection" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+      <div class="carousel-title section-title">
+        <div class="container">
+          <h2>Featured Properties and Developments</h2>
+        </div>
+      </div>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <img class="carousel-img" src="https://picsum.photos/seed/picsum/300/200" alt="">
+              <h1>House in the forest</h1>
+              <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+              <p><a class="btn btn-md btn-primary" href="#">See details</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <img class="carousel-img" src="https://picsum.photos/seed/picsum/300/200" alt="">
+              <h1>House in beach</h1>
+              <p>Some representative placeholder content for the second slide of the carousel.</p>
+              <p><a class="btn btn-md btn-primary" href="#">See details</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <img class="carousel-img" src="https://picsum.photos/seed/picsum/300/200" alt="">
+              <h1>Proyect in the City Center</h1>
+              <p>Some representative placeholder content for the third slide of this carousel.</p>
+              <p><a class="btn btn-md btn-primary" href="#">See details</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <img class="carousel-img" src="https://picsum.photos/seed/picsum/300/200" alt="">
+              <h1>Test 1</h1>
+              <p>Some representative placeholder content for the third slide of this carousel.</p>
+              <p><a class="btn btn-md btn-primary" href="#">See details</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <img class="carousel-img" src="https://picsum.photos/seed/picsum/300/200" alt="">
+              <h1>Test 2</h1>
+              <p>Some representative placeholder content for the third slide of this carousel.</p>
+              <p><a class="btn btn-md btn-primary" href="#">See details</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
 
