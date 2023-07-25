@@ -5,6 +5,7 @@ h1 {
 .reg-section {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  min-height: 30rem;
 }
 @media (max-width: 604px) {
   .reg-section {
@@ -110,6 +111,13 @@ section.text-tape p {
 }
 section.text-tape p strong {
   font-weight: 600;
+}
+
+section.footerSection {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #141414;
+  color: #fafafa;
 }
 
 section.postFooterSection {
