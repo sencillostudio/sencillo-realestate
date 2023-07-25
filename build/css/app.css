@@ -80,10 +80,22 @@ h1 {
   margin-top: 1rem;
 }
 
+textarea {
+  resize: none;
+}
+
 .heroSection {
   color: #fafafa;
   background: url("../../src/img/misc/hero.webp");
   background-size: cover;
   background-position: center;
   margin-bottom: 0;
+}
+
+section.postFooterSection {
+  background: #0f0f0f;
+  color: #b0b0b0;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
