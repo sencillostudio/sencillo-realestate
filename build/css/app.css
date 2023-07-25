@@ -92,6 +92,26 @@ textarea {
   margin-bottom: 0;
 }
 
+section.text-tape {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: #0f0f0f;
+  background: url("../../src/img/misc/hero.webp");
+  background-size: cover !important;
+}
+section.text-tape p {
+  color: #fafafa;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  max-width: 30rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+section.text-tape p strong {
+  font-weight: 600;
+}
+
 section.postFooterSection {
   background: #0f0f0f;
   color: #b0b0b0;
