@@ -105,10 +105,30 @@ textarea {
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), -8px -8px 31px #f9f9f9;
   transition: 0.3s;
+  min-width: 10rem;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   border: none;
+}
+.card-cover {
+  width: 100%;
+  height: 10rem;
+}
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card-content {
+  height: auto;
+  min-height: 12rem;
+  padding: 0.8rem;
+}
+.card-content p {
+  margin: 0;
+  line-height: 1.5rem;
 }
 
 .heroSection {
@@ -158,4 +178,5 @@ section.cardsSection {
   background: linear-gradient(to right top, #fbfbfb, #f7f7f7, #f3f3f3, #f0f0f0, #ececec);
   padding-top: 1rem;
   padding-bottom: 1rem;
+  min-height: 80vh;
 }
