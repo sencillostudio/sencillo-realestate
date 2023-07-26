@@ -16,6 +16,18 @@ h1
     &-color-gradient
         background: $theme-color-gradient
 
+nav.options
+    background: $theme-soft-gradient
+    padding-top: 1rem
+    padding-bottom: 1rem
+    .container
+        display: flex
+        justify-content: center
+        .btn
+            margin-left: 0.5rem
+            margin-right: 0.5rem
+
+
 .section-title
     padding-top: 1.5rem
     padding-bottom: 1rem
@@ -61,3 +73,13 @@ h1
 
 textarea
     resize: none
+
+.card 
+    border: none
+    background-color: white
+    border-radius: 8px
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.15), -8px -8px 31px darken(white, 2.5%)
+    transition: 0.3s
+    &:hover
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+        border: none
