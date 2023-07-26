@@ -13,7 +13,10 @@ h1 {
   }
 }
 .reg-section-soft {
-  background: #fafafa;
+  background: #0f0f0f;
+}
+.reg-section-dark {
+  background: #0f0f0f;
 }
 .reg-section-soft-gradient {
   background: linear-gradient(to right top, #fbfbfb, #f7f7f7, #f3f3f3, #f0f0f0, #ececec);
