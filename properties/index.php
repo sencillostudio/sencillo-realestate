@@ -22,13 +22,13 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="index.html">Sencillo Real Estate</a>
+          <a class="navbar-brand" href="index.php">Sencillo Real Estate</a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Properties</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Properties</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html#about">About us</a>
+              <a class="nav-link active" aria-current="page" href="index.php#about">About us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#contact">Leave us a message</a>
@@ -98,8 +98,8 @@
       <div class="container">
         <div class="row">
           <p>
-            <a href="login.html" class="btn btn-sm btn-dark">login</a>
-            <a href="aboutThisProject.html" class="btn btn-sm btn-dark">about this project</a>
+            <a href="login.php" class="btn btn-sm btn-dark">login</a>
+            <a href="aboutThisProject.php" class="btn btn-sm btn-dark">about this project</a>
           </p>
           <p>website created by Milton Zini (<a href="https://github.com/miltonzini" target="_blank">Github</a> | <a href="https://mzdev.com.ar">Portfolio</a>)</p>
         </div>

@@ -24,7 +24,7 @@
           <a class="navbar-brand" href="#">Sencillo Real Estate</a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="properties.html">Properties</a>
+              <a class="nav-link active" aria-current="page" href="properties.php">Properties</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#about">About us</a>
@@ -203,8 +203,8 @@
       <div class="container">
         <div class="row">
           <p>
-            <a href="login.html" class="btn btn-sm btn-dark">login</a>
-            <a href="aboutThisProject.html" class="btn btn-sm btn-dark">about this project</a>
+            <a href="login.php" class="btn btn-sm btn-dark">login</a>
+            <a href="aboutThisProject.php" class="btn btn-sm btn-dark">about this project</a>
           </p>
           <p>website created by Milton Zini (<a href="https://github.com/miltonzini" target="_blank">Github</a> | <a href="https://mzdev.com.ar">Portfolio</a>)</p>
         </div>
