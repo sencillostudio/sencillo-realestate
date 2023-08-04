@@ -1,22 +1,13 @@
 <?php
   require_once('includes/config.php'); 
+  $pageTitle = "Home";
 ?>
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="src/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="build/css/app.css" rel="stylesheet">
-
-    <title>Real Estate Website</title>
-    
+    <?php include_once 'includes/modules/head.php' ?>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
