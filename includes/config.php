@@ -16,4 +16,6 @@
     } else {
         define('BASE_URL', '...');
     }
+
+    // note: real BASE_URL will remain hidden in this public repo. Real info will exist only in dev (local) and in server.
 ?>
