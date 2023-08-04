@@ -1,15 +1,15 @@
 <?php
-  require_once('../includes/config.php'); 
+  require_once('includes/config.php'); 
   $pageTitle = "Property";
 ?>
 <!doctype html>
 <html lang="en">
   <head> 
-    <?php include_once '../includes/modules/head.php' ?>
+    <?php include_once 'includes/modules/head.php' ?>
   </head>
 
   <body>
-    <?php include_once '../includes/modules/navbar.php' ?>
+    <?php include_once 'includes/modules/navbar.php' ?>
 
     <div class="heroSection p-5">
       <div class="container py-5">
