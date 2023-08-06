@@ -148,7 +148,15 @@ textarea {
   line-height: 1.5rem;
 }
 
-.heroSection {
+.mainHeroSection {
+  color: #fafafa;
+  background: url("../../src/img/misc/hero.webp");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 0;
+}
+
+.subHeroSection {
   color: #fafafa;
   background: url("../../src/img/misc/hero.webp");
   background-size: cover;

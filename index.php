@@ -11,7 +11,7 @@
   <body>
     <?php include_once 'includes/modules/navbar.php' ?>
 
-    <div class="heroSection p-5">
+    <div class="mainHeroSection p-5">
       <div class="container py-5">
         <h1 class="display-5 fw-bold">Sencillo Real Estate</h1>
         <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla, facere consequatur amet voluptates a eos, quos quae odio quidem aperiam excepturi! Delectus consequatur quasi ad saepe harum similique accusantium!</p>
