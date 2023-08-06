@@ -3,10 +3,17 @@ html
     scroll-behavior: smooth
     box-sizing: border-box
 
-.body
+body
     margin: 0
     padding: 0
     line-height: 1.3
+    color: $theme-darkGray
+
+a, a:visited, a:hover
+    text-decoration: none
+
+strong
+    font-weight: bold
 
 h1
     font-size: 2rem
@@ -19,7 +26,7 @@ h1
         text-align: center!important
     &-soft
         background: $theme-dark
-        color: $theme-dark
+        color: $theme-darkGray
     &-dark
         background: $theme-darkGray
     &-soft-gradient
@@ -55,7 +62,7 @@ nav.options
     padding-bottom: 3rem
     &-caption
         position: relative
-        color: $theme-darkGray
+        color: inherit
         display: flex
         margin-top: 1rem
         @media ( max-width:  1167px)
@@ -110,7 +117,7 @@ textarea
     &-content
         height: auto
         min-height: 12rem
-        padding: 0.8rem
+        padding: 0.9rem
         p
             margin: 0
             line-height: 1.5rem
