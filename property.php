@@ -15,6 +15,8 @@
 
     <?php include_once 'includes/modules/gallerySection.php' ?>
 
+    <?php include_once 'includes/modules/descriptionSection.php' ?>
+
     <?php include_once 'includes/modules/statementSection.php'?>
 
     <?php include_once 'includes/modules/contactSection.php'?>
