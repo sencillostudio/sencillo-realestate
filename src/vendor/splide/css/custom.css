@@ -1,0 +1,38 @@
+.splide {
+    margin: 0 auto;
+}
+
+.splide__slide {
+    display: flex;
+    justify-content: center;
+}
+.splide__slide img {
+    max-width: 90%
+}
+
+.thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.thumbnail.is-active {
+    opacity: 1;
+}
+
+.thumbnail img {
+    max-width: 100%;
+    height: auto;
+}

@@ -221,3 +221,65 @@ section.cardsSection {
   padding-bottom: 1.5rem;
   min-height: 80vh;
 }
+
+section.gallery {
+  padding: 2rem 1rem;
+}
+section.gallery .splide {
+  margin: 0 auto;
+}
+section.gallery .splide .splide__arrows {
+  display: none;
+}
+section.gallery .splide .splide__track {
+  max-height: 20rem;
+}
+section.gallery .splide .splide__track .splide__list {
+  max-height: 20rem;
+}
+section.gallery .splide .splide__track .splide__list .splide__slide {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+section.gallery .splide .splide__track .splide__list .splide__slide a {
+  text-decoration: none;
+  height: 20rem;
+  object-fit: cover;
+  object-position: center;
+}
+section.gallery .splide .splide__track .splide__list .splide__slide a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+section.gallery .thumbnails {
+  max-width: 35rem;
+  display: flex;
+  margin: 1rem auto 0;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+section.gallery .thumbnails .thumbnail {
+  width: 5.8rem;
+  height: 4.9rem;
+  overflow: hidden;
+  list-style: none;
+  margin: 0.2rem;
+  cursor: pointer;
+  opacity: 0.5;
+}
+section.gallery .thumbnails .thumbnail.is-active {
+  opacity: 1;
+}
+section.gallery .thumbnails .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

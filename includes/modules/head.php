@@ -4,8 +4,10 @@
 
         <!-- Bootstrap CSS -->
         <link href="<?php echo BASE_URL ?>/src/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
+        <!-- Splide -->
+        <link href="<?php echo BASE_URL ?>/src/vendor/splide/css/splide.min.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?php echo BASE_URL ?>/build/css/app.css" rel="stylesheet">
-
+        
+        
         <title>Real Estate Website | <?php echo $pageTitle ?></title>
