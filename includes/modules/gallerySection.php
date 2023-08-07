@@ -1,5 +1,5 @@
 <?php 
-    // temp empty variables (from query results)
+    // temp query result keys/values. 
     $elemento['img1'] = 'https://picsum.photos/600/300';
     $elemento['img2'] = 'https://picsum.photos/600/301';
     $elemento['img3'] = 'https://picsum.photos/600/302';
@@ -7,8 +7,6 @@
     $elemento['img5'] = 'https://picsum.photos/600/304';
     $elemento['img6'] = 'https://picsum.photos/600/305';
     $elemento['img7'] = 'https://picsum.photos/600/306';
-
-    
       
 ?>
 <section class="gallery">
