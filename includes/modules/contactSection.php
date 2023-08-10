@@ -1,6 +1,10 @@
 <div class="contactSection reg-section reg-section-soft-gradient" id="contact">
+    <div class="sectionTitle">
+        <div class="container">
+            <h2>Leave us a message</h2>
+        </div>
+    </div>
     <div class="container">
-        <h2 class="">Leave us a message</h2>
         <form action="" class="col-md-8">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>

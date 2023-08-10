@@ -19,7 +19,7 @@
     </div>
 
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
-      <div class="carousel-title section-title text-center">
+      <div class="carousel-title sectionTitle sectionTitle-center">
         <div class="container">
           <h2>Featured Properties and Developments</h2>
         </div>
@@ -124,8 +124,12 @@
     </div>
 
     <div class="aboutUsSection reg-section reg-section-color-gradient" id="about">
+      <div class="sectionTitle">
+        <div class="container">
+          <h2>About us</h2>
+        </div>
+      </div>
       <div class="container">
-        <h2 class="">About Sencillo Real Estate</h2>
         <p class="col-md-8 fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nulla, facere consequatur amet voluptates a eos, quos quae odio quidem aperiam excepturi! Delectus consequatur quasi ad saepe harum similique accusantium!</p>
         <p class="col-md-8 fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nisi earum iure quibusdam quod dolor hic. Incidunt temporibus, labore dolore voluptatibus unde explicabo magni, amet, minus esse voluptates sit commodi?</p>
       </div>

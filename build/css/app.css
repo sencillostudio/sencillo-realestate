@@ -86,22 +86,17 @@ nav.options .container .btn {
   margin-right: 0.5rem;
 }
 
-.section-title {
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+.sectionTitle {
+  padding-top: 1.2rem;
+  padding-bottom: 0.7rem;
 }
-
 .sectionTitle-center {
   text-align: center;
 }
-
 .sectionTitle-left {
   display: grid;
   grid-template-columns: repeat(16, [col-start] 1fr);
   column-gap: 20px;
-}
-.sectionTitle-left h3, .sectionTitle-left h4, .sectionTitle-left h5, .sectionTitle-left h6 {
-  margin-bottom: 1rem;
 }
 @media (max-width: 850px) {
   .sectionTitle-left h3, .sectionTitle-left h4, .sectionTitle-left h5, .sectionTitle-left h6 {
@@ -113,15 +108,11 @@ nav.options .container .btn {
     grid-column: 3/7;
   }
 }
-
 .sectionTitle-right {
   text-align: right;
   display: grid;
   grid-template-columns: repeat(16, [col-start] 1fr);
   column-gap: 20px;
-}
-.sectionTitle-right h3, .sectionTitle-right h4, .sectionTitle-right h5, .sectionTitle-right h6 {
-  margin-bottom: 1rem;
 }
 @media (max-width: 850px) {
   .sectionTitle-right h3, .sectionTitle-right h4, .sectionTitle-right h5, .sectionTitle-right h6 {
