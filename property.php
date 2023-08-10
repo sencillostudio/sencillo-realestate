@@ -19,7 +19,9 @@
 
     <?php include_once 'includes/modules/videoSection.php' ?>
 
-    
+    <?php include_once 'includes/modules/mapSection.php'?>
+
+
 
     <?php include_once 'includes/modules/statementSection.php'?>
 
