@@ -1,4 +1,4 @@
-<section id="video" class="reg-section">
+<section id="video" class="reg-section reg-section-soft-gradient">
     <div class="sectionTitle sectionTitle-center">
         <div class="container">
             <h2>Property Video</h2>

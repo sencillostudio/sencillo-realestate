@@ -9,7 +9,7 @@
     $elemento['img7'] = 'https://picsum.photos/600/306';
       
 ?>
-<section class="gallery">
+<section class="gallery reg-section reg-section-soft-gradient">
     <div class="container">
         <div class="row">
             <div id="main-slider" class="splide">
