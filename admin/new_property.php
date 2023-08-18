@@ -73,16 +73,19 @@
           <div class="row">
             <div class="first-block col-md-6 mt-4">
               <h3>Property Info</h3>
-              <label for="name" class="form-label">Nombre<span class="clarification"> (required field)</span></label>
+              <label for="name" class="form-label">Name</label>
+              <p><small> (required field)</small></p>
               <input type="text" name="name" id="name" class="form-control" value="<?php echo $name ?>">
 
-              <label for="description" class="form-label">Description<span class="clarification"> (required field)</span></label>
+              <label for="description" class="form-label">Description</label>
+              <p><small> (required field)</small></p>
               <textarea name="description" id="description" maxlength="1200" class="form-control"><?php echo $description ?></textarea>
 
-              <label for="address" class="form-label">Address<span class="clarification"> (required field)</span></label>
+              <label for="address" class="form-label">Address</label>
               <textarea name="address" id="address" maxlength="1200" class="form-control"><?php echo $address ?></textarea>
 
-              <label for="type">Tipo de Inmueble<span class="clarification"> (campo obligatorio)</span></label>
+              <label for="type">Type</label>
+              <p><small> (required field)</small></p>
               <select name="type" id="type" class="form-select">
                   <option value="">Elija una opción</option>
                   <option <?php echo $type === 'casa' ? 'selected' : '' ?> value="casa">House</option>
@@ -91,6 +94,62 @@
                   <option <?php echo $type === 'PH' ? 'selected' : '' ?> value="PH">Lot/Land</option>
               </select>
 
+              <label for="neighborhood">Neighborhood</label>
+              <input type="text" name="neighborhood" id="neighborhood" value="<?php echo $neighborhood ?>">
+
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" value="<?php echo $city ?>">
+
+              <label for="state">State</label>
+              <input type="text" name="state" id="state" value="<?php echo $state ?>">
+
+              <label for="provincia">Provincia</label>
+              <input type="text" name="provincia" id="provincia" value="<?php echo $provincia ?>">
+
+              <label for="rooms">Rooms</label>
+              <select name="rooms" id="rooms">
+                  <option <?php echo $rooms == '1' ? 'selected' : '' ?> value="1">1</option>
+                  <option <?php echo $rooms == '2' ? 'selected' : '' ?> value="2">2</option>
+                  <option <?php echo $rooms == '3' ? 'selected' : '' ?> value="3">3</option>
+                  <option <?php echo $rooms == '4' ? 'selected' : '' ?> value="4">4</option>
+                  <option <?php echo $rooms == '5' ? 'selected' : '' ?> value="5">5</option>
+                  <option <?php echo $rooms == '6' ? 'selected' : '' ?> value="6">6</option>
+                  <option <?php echo $rooms == '7' ? 'selected' : '' ?> value="7">7</option>
+                  <option <?php echo $rooms == '8' ? 'selected' : '' ?> value="8">8</option>
+                  <option <?php echo $rooms == '9' ? 'selected' : '' ?> value="9">9</option>
+                  <option <?php echo $rooms == '10' ? 'selected' : '' ?> value="10">10</option>
+              </select>
+
+              <label for="bedrooms">Bedrooms</label>
+              <select name="bedrooms" id="bedrooms">
+                  <option <?php echo $bedrooms == '1' ? 'selected' : '' ?> value="1">1</option>
+                  <option <?php echo $bedrooms == '2' ? 'selected' : '' ?> value="2">2</option>
+                  <option <?php echo $bedrooms == '3' ? 'selected' : '' ?> value="3">3</option>
+                  <option <?php echo $bedrooms == '4' ? 'selected' : '' ?> value="4">4</option>
+                  <option <?php echo $bedrooms == '5' ? 'selected' : '' ?> value="5">5</option>
+                  <option <?php echo $bedrooms == '6' ? 'selected' : '' ?> value="6">6</option>
+                  <option <?php echo $bedrooms == '7' ? 'selected' : '' ?> value="7">7</option>
+                  <option <?php echo $bedrooms == '8' ? 'selected' : '' ?> value="8">8</option>
+                  <option <?php echo $bedrooms == '9' ? 'selected' : '' ?> value="9">9</option>
+                  <option <?php echo $bedrooms == '10' ? 'selected' : '' ?> value="10">10</option>
+              </select>
+              
+              <label for="bathrooms">Bathrooms</label>
+              <select name="bathrooms" id="bathrooms">
+                  <option <?php echo $bathrooms == '1' ? 'selected' : '' ?> value="1">1</option>
+                  <option <?php echo $bathrooms == '2' ? 'selected' : '' ?> value="2">2</option>
+                  <option <?php echo $bathrooms == '3' ? 'selected' : '' ?> value="3">3</option>
+                  <option <?php echo $bathrooms == '4' ? 'selected' : '' ?> value="4">4</option>
+                  <option <?php echo $bathrooms == '5' ? 'selected' : '' ?> value="5">5</option>
+                  <option <?php echo $bathrooms == '6' ? 'selected' : '' ?> value="6">6</option>
+                  <option <?php echo $bathrooms == '7' ? 'selected' : '' ?> value="7">7</option>
+                  <option <?php echo $bathrooms == '8' ? 'selected' : '' ?> value="8">8</option>
+                  <option <?php echo $bathrooms == '9' ? 'selected' : '' ?> value="9">9</option>
+                  <option <?php echo $bathrooms == '10' ? 'selected' : '' ?> value="10">10</option>
+              </select>
+
+              <label for="services">Services</label>
+              <input type="text" name="services" id="services" value="<?php echo $services ?>">
 
 
             </div>
