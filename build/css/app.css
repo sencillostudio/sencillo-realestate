@@ -359,3 +359,12 @@ section#video iframe {
     grid-column: 5/13;
   }
 }
+
+@media (max-width: 575px) {
+  section#detailsSection {
+    padding-left: 5%;
+  }
+}
+section#detailsSection p {
+  text-align: left;
+}

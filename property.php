@@ -1,6 +1,6 @@
 <?php
   require_once('includes/config.php'); 
-  $pageTitle = "Property";
+  $pageTitle = "Property 001";
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,6 +19,8 @@
 
     <?php include_once 'includes/modules/videoSection.php' ?>
 
+    <?php include_once 'includes/modules/detailsSection.php' ?>
+    
     <?php include_once 'includes/modules/mapSection.php'?>
 
 
