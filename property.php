@@ -1,5 +1,5 @@
 <?php
-  require_once('includes/config.php'); 
+  require_once('includes/app.php'); 
   $pageTitle = "Property 001";
 ?>
 <!doctype html>
