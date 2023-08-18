@@ -10,6 +10,7 @@
         require_once('db-production.php');
     }
     
+    require __DIR__ . '/../vendor/autoload.php';
 
     // Base Url
     if ($env === 'local') {
@@ -17,6 +18,7 @@
     } else {
         define('BASE_URL', 'https://mzdev.com.ar/projects/sencillo-realestate');
     }
-
     // note: real BASE_URL will remain hidden in this public repo. Real info will exist only in dev (local) and in server.
+
+    use App\Property;
 ?>
