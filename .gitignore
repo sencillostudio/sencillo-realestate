@@ -2,3 +2,5 @@ node_modules
 includes/config.php
 includes/db-local.php
 includes/db-production.php
+
+/vendor/
