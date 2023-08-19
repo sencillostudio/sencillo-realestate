@@ -95,19 +95,19 @@
               </select>
 
               <label for="neighborhood">Neighborhood</label>
-              <input type="text" name="neighborhood" id="neighborhood" value="<?php echo $neighborhood ?>">
+              <input type="text" name="neighborhood" id="neighborhood" class="form-control" value="<?php echo $neighborhood ?>">
 
               <label for="city">City</label>
-              <input type="text" name="city" id="city" value="<?php echo $city ?>">
+              <input type="text" name="city" id="city" class="form-control" value="<?php echo $city ?>">
+
+              <label for="county">County</label>
+              <input type="text" name="county" id="county" class="form-control" value="<?php echo $county ?>">
 
               <label for="state">State</label>
-              <input type="text" name="state" id="state" value="<?php echo $state ?>">
-
-              <label for="provincia">Provincia</label>
-              <input type="text" name="provincia" id="provincia" value="<?php echo $provincia ?>">
+              <input type="text" name="state" id="state" class="form-control" value="<?php echo $state ?>">
 
               <label for="rooms">Rooms</label>
-              <select name="rooms" id="rooms">
+              <select name="rooms" id="rooms" class="form-select">
                   <option <?php echo $rooms == '1' ? 'selected' : '' ?> value="1">1</option>
                   <option <?php echo $rooms == '2' ? 'selected' : '' ?> value="2">2</option>
                   <option <?php echo $rooms == '3' ? 'selected' : '' ?> value="3">3</option>
@@ -121,7 +121,7 @@
               </select>
 
               <label for="bedrooms">Bedrooms</label>
-              <select name="bedrooms" id="bedrooms">
+              <select name="bedrooms" id="bedrooms" class="form-select">
                   <option <?php echo $bedrooms == '1' ? 'selected' : '' ?> value="1">1</option>
                   <option <?php echo $bedrooms == '2' ? 'selected' : '' ?> value="2">2</option>
                   <option <?php echo $bedrooms == '3' ? 'selected' : '' ?> value="3">3</option>
@@ -135,7 +135,7 @@
               </select>
               
               <label for="bathrooms">Bathrooms</label>
-              <select name="bathrooms" id="bathrooms">
+              <select name="bathrooms" id="bathrooms" class="form-select">
                   <option <?php echo $bathrooms == '1' ? 'selected' : '' ?> value="1">1</option>
                   <option <?php echo $bathrooms == '2' ? 'selected' : '' ?> value="2">2</option>
                   <option <?php echo $bathrooms == '3' ? 'selected' : '' ?> value="3">3</option>
@@ -149,37 +149,91 @@
               </select>
 
               <label for="services">Services</label>
-              <input type="text" name="services" id="services" value="<?php echo $services ?>">
+              <input type="text" name="services" id="services" class="form-control" value="<?php echo $services ?>">
+
+              <label for="square_feet">Square feet</label>
+              <input type="text" name="square_feet" id="square_feet" class="form-control" value="<?php echo $square_feet ?>">
+
+              <label for="length">Lenght</label>
+              <input type="text" name="length" id="length" class="form-control" value="<?php echo $length ?>">
+
+              <label for="width">Width</label>
+              <input type="text" name="width" id="width" class="form-control" value="<?php echo $width ?>">
+
+              <label for="value">Value</label>
+              <input type="text" name="value" id="value" class="form-control" value="<?php echo $value ?>">
+
+              <label for="transaction">Transaction</label>
+              <input type="text" name="transaction" id="transaction" class="form-control" value="<?php echo $transaction ?>">
 
 
             </div>
             
             <div class="second-block col-md-6 mt-4">
               <h3>Config</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
+              <label for="status">Status</label>
+              <select name="status" id="status" class="form-select">
+                  <option <?php echo $status === 'hidden' ? 'selected' : '' ?> value="hidden">Hidden</option>
+                  <option <?php echo $status === 'paused' ? 'selected' : '' ?> value="paused">Paused</option>
+                  <option <?php echo $status === 'active' ? 'selected' : '' ?> value="active">Active</option>
+                  <option <?php echo $status === 'reserved' ? 'selected' : '' ?> value="reserved">Reserved</option>
+              </select>
+              
+              <label for="map_iframe">Map iframe</label>
+              <textarea name="map_iframe" id="map_iframe" minlength="10" maxlength="2000" class="form-control"><?php echo $map_iframe ?></textarea>
+
+              <label for="video_iframe">Video iframe</label>
+              <textarea name="video_iframe" id="video_iframe" minlength="10" maxlength="2000" class="form-control"><?php echo $video_iframe ?></textarea>
+
+              <label for="featured">¿Featured property?</label>
+              <select name="featured" id="featured" class="form-select">
+                  <option <?php echo $featured == '0' ? 'selected' : '' ?> value="0">No</option>
+                  <option <?php echo $featured == '1' ? 'selected' : '' ?> value="1">Yes</option>
+              </select>
+
+              <label for="private_notes">Private Notes</label>
+              <textarea name="private_notes" id="private_notes" minlength="10" maxlength="2000" class="form-control"><?php echo $private_notes ?></textarea>
+
             </div>  
           </div>
 
           <div class="row">
             <div class="third-block col-md-6 mt-4">
               <h3>Images</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
+              <?php for ($i = 1; $i <= $galleryImagesNumber; $i++) { ?>
+                  <div class="add-img">
+                      <p class="title">Image <?php echo $i; ?></p> 
+                      <input type="file" name="img<?php echo $i; ?>" id="img<?php echo $i; ?>" accept=".jpg, .jpeg, .gif, .png" />
+                  </div>
+              <?php } ?>
             </div>  
           
-            <div class="fourth-block col-md-6 mt-4">
-            <p><strong>Thumbnails here</strong>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
-            </div> 
-          </div>
-
-          <div class="row">
+            <!-- <div class="fourth-block col-md-6 mt-4">
+              <p><strong>Thumbnails here</strong>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
+            </div>  -->
             <div class="fifth-block col-md-6 mt-4">
               <h3>Docs</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
+              <?php for ($i = 1; $i <= $propertyFilesNumber; $i++) : ?>
+                  <?php 
+                      $btnTextVar = ${'button_' . $i . '_text'};
+                  ?>
+                  <div class="add-file">
+                      <h4 class="title title-main">Doc <?php echo $i; ?></h4>
+                      <label for="button_<?php echo $i; ?>_text" class="titulo">Button text: </label>
+                      <input type="text" name="button_<?php echo $i; ?>_text" id="button_<?php echo $i; ?>_text" value="<?php echo $btnTextVar ?>">
+                      <br>
+                      <label for="file<?php echo $i; ?>" class="titulo">File: </label>
+                      <input type="file" name="doc<?php echo $i; ?>" id="file<?php echo $i; ?>" accept="application/pdf, .txt, image/*" /> 
+                  </div>
+              <?php endfor; ?>
             </div>
+          </div>
+
+          <!-- <div class="row">
             <div class="sixth-block col-md-6 mt-4">
               <p><strong>Thumbnails here</strong>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
             </div>
-          </div>
+          </div> -->
 
 
         </form>
