@@ -368,3 +368,28 @@ section#video iframe {
 section#detailsSection p {
   text-align: left;
 }
+
+.newPropertyForm, .editPropertyForm {
+  background: linear-gradient(to right top, #e9eef6, #eef1f8, #f2f4f9, #f6f7fa, #fafafc, #faf9fc, #faf9fc, #fbf8fb, #fbf4f6, #faf0ef, #f8ece7, #f2eae0);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.newPropertyForm form .add-img, .newPropertyForm form .add-file, .editPropertyForm form .add-img, .editPropertyForm form .add-file {
+  background: white;
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-radius: 0.5rem;
+}
+.newPropertyForm form .add-img p, .newPropertyForm form .add-file p, .newPropertyForm form .add-img input, .newPropertyForm form .add-file input, .editPropertyForm form .add-img p, .editPropertyForm form .add-file p, .editPropertyForm form .add-img input, .editPropertyForm form .add-file input {
+  display: inline;
+}
+.newPropertyForm form .add-img p, .newPropertyForm form .add-file p, .editPropertyForm form .add-img p, .editPropertyForm form .add-file p {
+  font-size: 1rem;
+}
+.newPropertyForm form .add-file .title, .editPropertyForm form .add-file .title {
+  font-size: 1rem;
+}
+.newPropertyForm form .add-file .title-main, .editPropertyForm form .add-file .title-main {
+  font-weight: bold;
+}
