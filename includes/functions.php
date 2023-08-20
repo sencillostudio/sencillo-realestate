@@ -11,4 +11,12 @@
         }
         return false;
     };
+
+    function debug($var) {
+        echo "<div class='debug-modal'>";
+        echo "<pre>";
+        var_dump($var);
+        echo "</pre>";
+        echo "</div>";
+    }
 ?>

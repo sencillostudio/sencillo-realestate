@@ -107,9 +107,7 @@
 
         // upload docs
         
-        echo "<div class='debug-modal'>";
-        echo "debug";
-        echo "</div>";
+        debug("ok");
 
       }
 
