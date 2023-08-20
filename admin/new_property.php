@@ -2,6 +2,10 @@
   require_once('../includes/app.php'); 
   $pageTitle = "New Property";
 
+  // Errors array
+  $errors = [];
+  $success = [];
+
   // var declarations
   $name = "";
   $description = "";
@@ -20,21 +24,6 @@
   $length = "";
   $value = "";
   $transaction = "";
-  $img1 = "";
-  $img2 = "";
-  $img3 = "";
-  $img4 = "";
-  $img5 = "";
-  $img6 = "";
-  $img7 = "";
-  $img8 = "";
-  $img9 = "";
-  $img10 = "";
-  $img11 = "";
-  $img12 = "";
-  $img13 = "";
-  $img14 = "";
-  $img15 = "";
   $button_1_text = "";
   $button_2_text = "";
   $button_3_text = "";
@@ -42,19 +31,91 @@
   $button_5_text = "";
   $button_6_text = "";
   $button_7_text = "";
-  $doc1 = "";
-  $doc2 = "";
-  $doc3 = "";
-  $doc4 = "";
-  $doc5 = "";
-  $doc6 = "";
-  $doc7 = "";
   $video_iframe = "";
   $map_iframe = "";
   $private_notes = "";
   $status = "";
   $featured = "";
-  $code = "";
+
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = mysqli_real_escape_string($dbConnection, $_POST['name']);
+    $description = mysqli_real_escape_string($dbConnection, $_POST['description']);
+    $address = mysqli_real_escape_string($dbConnection, $_POST['address']);
+    $type = mysqli_real_escape_string($dbConnection, $_POST['type']);
+    $neighborhood = mysqli_real_escape_string($dbConnection, $_POST['neighborhood']);
+    $city = mysqli_real_escape_string($dbConnection, $_POST['city']);
+    $county = mysqli_real_escape_string($dbConnection, $_POST['county']);
+    $state = mysqli_real_escape_string($dbConnection, $_POST['state']);
+    $rooms = mysqli_real_escape_string($dbConnection, $_POST['rooms']);
+    $bedrooms = mysqli_real_escape_string($dbConnection, $_POST['bedrooms']);
+    $bathrooms = mysqli_real_escape_string($dbConnection, $_POST['bathrooms']);
+    $services = mysqli_real_escape_string($dbConnection, $_POST['services']);
+    $square_feet = mysqli_real_escape_string($dbConnection, $_POST['square_feet']);
+    $width = mysqli_real_escape_string($dbConnection, $_POST['width']);
+    $length = mysqli_real_escape_string($dbConnection, $_POST['length']);
+    $value = mysqli_real_escape_string($dbConnection, $_POST['value']);
+    $transaction = mysqli_real_escape_string($dbConnection, $_POST['transaction']);
+    $button_1_text = mysqli_real_escape_string($dbConnection, $_POST['button_1_text']);
+    $button_2_text = mysqli_real_escape_string($dbConnection, $_POST['button_2_text']);
+    $button_3_text = mysqli_real_escape_string($dbConnection, $_POST['button_3_text']);
+    $button_4_text = mysqli_real_escape_string($dbConnection, $_POST['button_4_text']);
+    $button_5_text = mysqli_real_escape_string($dbConnection, $_POST['button_5_text']);
+    $button_6_text = mysqli_real_escape_string($dbConnection, $_POST['button_6_text']);
+    $button_7_text = mysqli_real_escape_string($dbConnection, $_POST['button_7_text']);
+    $video_iframe = mysqli_real_escape_string($dbConnection, $_POST['video_iframe']);
+    $map_iframe = mysqli_real_escape_string($dbConnection, $_POST['map_iframe']);
+    $private_notes = mysqli_real_escape_string($dbConnection, $_POST['private_notes']);
+    $status = mysqli_real_escape_string($dbConnection, $_POST['status']);
+    $featured = mysqli_real_escape_string($dbConnection, $_POST['featured']);
+
+    // asign imgX variables with $_FILES data.
+        // (use $amountOfImages from config files)
+        for ($i = 1; $i <= $galleryImagesNumber; $i++) {
+          $imgName = 'img' . $i;
+          ${$imgName} = $_FILES[$imgName];
+      }
+
+      // asign docX variables with $_FILES data.
+      // (use $amountOfDocs from config files)
+      for ($i = 1; $i <= $propertyFilesNumber; $i++) {
+          $docName = 'doc' . $i;
+          ${$docName} = $_FILES[$docName];
+      }
+
+      if (!$name) {
+        $errors[] = "<p><strong>name</strong> required.</p>";
+      }
+      if (strlen($description) < 40) {
+          $errors[] = "<p><strong>description</strong> must contain at least 40 characters.</p>";
+      }
+      
+      if ($errors) {
+        echo "<div class='alert alert-danger' role='alert'>";
+        foreach ($errors as $message) {
+            echo $message;
+        }
+        echo "</div>";
+      }
+
+      if (empty($errores)) {
+        // Insert in db
+
+        // update property code
+
+        // upload images
+
+        // upload docs
+        
+        echo "<div class='alert alert-success' role='alert'>";
+        echo "debug";
+        echo "</div>";
+
+      }
+
+
+
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -82,7 +143,7 @@
               <textarea name="description" id="description" maxlength="1200" class="form-control"><?php echo $description ?></textarea>
 
               <label for="address" class="form-label">Address</label>
-              <textarea name="address" id="address" maxlength="1200" class="form-control"><?php echo $address ?></textarea>
+              <input type="text" name="address" id="address" class="form-control" value="<?php echo $address ?>">
 
               <label for="type">Type</label>
               <p><small> (required field)</small></p>
