@@ -216,6 +216,29 @@ textarea {
   line-height: 1.5rem;
 }
 
+.alert {
+  width: 9rem;
+  position: fixed;
+  z-index: 10006;
+  top: 5rem;
+  right: 3rem;
+}
+
+.debug-modal {
+  min-width: 30rem;
+  max-width: 70rem;
+  max-height: 20rem;
+  overflow: auto;
+  padding: 0.5rem;
+  position: fixed;
+  z-index: 10005;
+  top: 8rem;
+  left: 1rem;
+  text-align: left;
+  border-radius: 0.3rem;
+  background: #8fc97a;
+}
+
 .mainHeroSection {
   color: #fafafa;
   background: url("../../src/img/misc/hero.webp");

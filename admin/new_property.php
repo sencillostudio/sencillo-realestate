@@ -98,7 +98,7 @@
         echo "</div>";
       }
 
-      if (empty($errores)) {
+      if (empty($errors)) {
         // Insert in db
 
         // update property code
@@ -107,7 +107,7 @@
 
         // upload docs
         
-        echo "<div class='alert alert-success' role='alert'>";
+        echo "<div class='debug-modal'>";
         echo "debug";
         echo "</div>";
 
