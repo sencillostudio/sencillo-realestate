@@ -3,6 +3,9 @@
 namespace App;
 
 class Property {
+    // db 
+    protected static $db;
+
     public $id;
     public $name;
     public $description;
@@ -119,6 +122,14 @@ class Property {
         $this->name = $args['name'] ?? '';
         $this->name = $args['name'] ?? '';
         $this->name = $args['name'] ?? '';
+    }
+    public function save() {
+        // query
+        // 
+    }
+
+    public static function setDB($database) {
+        self::$db = $database;
     }
 
 }

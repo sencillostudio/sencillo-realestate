@@ -2,6 +2,8 @@
   require_once('../includes/app.php'); 
   $pageTitle = "New Property";
 
+  use App\Property; 
+
   // Errors array
   $errors = [];
   $success = [];
@@ -39,6 +41,11 @@
 
 
   if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $property = new Property($_POST);
+    $property->save();
+    // debug($property);
+
+
     $name = mysqli_real_escape_string($dbConnection, $_POST['name']);
     $description = mysqli_real_escape_string($dbConnection, $_POST['description']);
     $address = mysqli_real_escape_string($dbConnection, $_POST['address']);
@@ -107,7 +114,7 @@
 
         // upload docs
         
-        debug("ok");
+        // debug("ok");
 
       }
 
