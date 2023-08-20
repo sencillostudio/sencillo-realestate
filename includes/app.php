@@ -9,6 +9,9 @@
     } else {
         require_once('db-production.php');
     }
+    $db = dbConnect();
+    use App\Property;
+    Property::setDB($db);
     
     require __DIR__ . '/../vendor/autoload.php';
 
@@ -20,5 +23,5 @@
     }
     // note: real BASE_URL will remain hidden in this public repo. Real info will exist only in dev (local) and in server.
 
-    use App\Property;
+
 ?>
