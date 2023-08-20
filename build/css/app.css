@@ -374,9 +374,16 @@ section#detailsSection p {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.newPropertyForm form label, .editPropertyForm form label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.newPropertyForm form textarea, .editPropertyForm form textarea {
+  height: 10rem;
+}
 .newPropertyForm form .add-img, .newPropertyForm form .add-file, .editPropertyForm form .add-img, .editPropertyForm form .add-file {
   background: white;
-  padding: 0.5rem;
+  padding: 0.8rem;
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
   border-radius: 0.5rem;
@@ -392,4 +399,11 @@ section#detailsSection p {
 }
 .newPropertyForm form .add-file .title-main, .editPropertyForm form .add-file .title-main {
   font-weight: bold;
+}
+.newPropertyForm form .btn-wrapper, .editPropertyForm form .btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.newPropertyForm form .btn-wrapper .btn, .editPropertyForm form .btn-wrapper .btn {
+  margin-top: 2rem;
 }

@@ -234,6 +234,9 @@
               <p><strong>Thumbnails here</strong>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
             </div>
           </div> -->
+          <div class="btn-wrapper">
+            <input type="submit" value="Add Property" class="btn btn-primary">
+          </div>
 
 
         </form>
