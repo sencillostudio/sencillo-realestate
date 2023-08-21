@@ -19,4 +19,16 @@
         echo "</pre>";
         echo "</div>";
     }
+    function alertSuccess($var) {
+        echo "<div class='alert alert-success' role='alert'>";
+        echo $var;
+        echo "</div>";
+    }
+
+    function alertDanger($var) {
+        echo "<div class='alert alert-danger' role='alert'>";
+        echo $var;
+        echo "</div>";
+    }
+    
 ?>
