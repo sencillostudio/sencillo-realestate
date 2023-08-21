@@ -2,7 +2,8 @@
     require_once('env.php'); // envirorment
     require_once('publicConfig.php'); // user config
     require_once('functions.php');
-
+    require __DIR__ . '/../vendor/autoload.php';
+    
     // DB Connections
     if ($env === 'local') {
         require_once('db-local.php');
@@ -13,7 +14,7 @@
     use App\Property;
     Property::setDB($db);
     
-    require __DIR__ . '/../vendor/autoload.php';
+    
 
     // Base Url
     if ($env === 'local') {

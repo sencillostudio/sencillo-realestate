@@ -63,7 +63,7 @@ class Property {
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? '';
-        $this->name = $args['name;'] ?? '';
+        $this->name = $args['name'] ?? '';
         $this->description = $args['description'] ?? '';
         $this->address = $args['address'] ?? '';
         $this->type = $args['type'] ?? '';
@@ -115,17 +115,11 @@ class Property {
         $this->status = $args['status'] ?? '';
         $this->featured = $args['featured'] ?? '';
         $this->code = $args['code'] ?? '';
-        $this->name = $args['name'] ?? '';
-        $this->name = $args['name'] ?? '';
-        $this->name = $args['name'] ?? '';
-        $this->name = $args['name'] ?? '';
-        $this->name = $args['name'] ?? '';
-        $this->name = $args['name'] ?? '';
-        $this->name = $args['name'] ?? '';
+        
     }
     public function save() {
         // query
-        // 
+        
     }
 
     public static function setDB($database) {
