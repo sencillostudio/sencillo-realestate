@@ -43,6 +43,7 @@
   if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $property = new Property($_POST);
     $property->save();
+    alertSuccess("property added");
   }
 ?>
 <!doctype html>
@@ -64,23 +65,22 @@
               <h3>Property Info</h3>
               <label for="name" class="form-label">Name</label>
               <p><small> (required field)</small></p>
-              <input type="text" name="name" id="name" class="form-control" value="<?php echo $name ?>">
+              <input type="text" name="name" id="name" class="form-control" value="<?php echo $name ?>" required>
 
               <label for="description" class="form-label">Description</label>
               <p><small> (required field)</small></p>
-              <textarea name="description" id="description" maxlength="1200" class="form-control"><?php echo $description ?></textarea>
+              <textarea name="description" id="description" maxlength="1200" class="form-control" required><?php echo $description ?></textarea>
 
               <label for="address" class="form-label">Address</label>
               <input type="text" name="address" id="address" class="form-control" value="<?php echo $address ?>">
 
               <label for="type">Type</label>
-              <p><small> (required field)</small></p>
               <select name="type" id="type" class="form-select">
                   <option value="">Elija una opción</option>
-                  <option <?php echo $type === 'casa' ? 'selected' : '' ?> value="casa">House</option>
-                  <option <?php echo $type === 'departamento' ? 'selected' : '' ?> value="departamento">Apartment</option>
-                  <option <?php echo $type === 'local' ? 'selected' : '' ?> value="local">Condo</option>
-                  <option <?php echo $type === 'PH' ? 'selected' : '' ?> value="PH">Lot/Land</option>
+                  <option <?php echo $type === 'house' ? 'selected' : '' ?> value="casa">House</option>
+                  <option <?php echo $type === 'apartment' ? 'selected' : '' ?> value="departamento">Apartment</option>
+                  <option <?php echo $type === 'condo' ? 'selected' : '' ?> value="local">Condo</option>
+                  <option <?php echo $type === 'land' ? 'selected' : '' ?> value="PH">Lot/Land</option>
               </select>
 
               <label for="neighborhood">Neighborhood</label>
