@@ -30,5 +30,19 @@
         echo $var;
         echo "</div>";
     }
+    function alertSuccessFromArray($errors) {
+        echo "<div class='alert alert-success' role='alert'>";
+        foreach ($errors as $message) {
+            echo $message;
+        }
+        echo "</div>";
+    }
+    function alertDangerFromArray($errors) {
+        echo "<div class='alert alert-danger' role='alert'>";
+        foreach ($errors as $message) {
+            echo $message;
+        }
+        echo "</div>";
+    }
     
 ?>

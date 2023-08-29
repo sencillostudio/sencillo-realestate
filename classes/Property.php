@@ -7,6 +7,9 @@ class Property {
     protected static $db;
     protected static $dbColumns = ['id', 'name', 'description', 'address', 'type', 'neighborhood', 'city', 'county', 'state', 'rooms', 'bedrooms', 'bathrooms', 'services', 'square_feet', 'width', 'length', 'value', 'transaction', 'img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12', 'img13', 'img14', 'img15', 'button_1_text', 'button_2_text', 'button_3_text', 'button_4_text', 'button_5_text', 'button_6_text', 'button_7_text', 'doc1', 'doc2', 'doc3', 'doc4', 'doc5', 'doc6', 'doc7', 'video_iframe', 'map_iframe', 'private_notes', 'status', 'featured', 'code'];
 
+    // Error messages array
+    protected static $errors = [];
+
     public $id;
     public $name;
     public $description;
@@ -158,6 +161,22 @@ class Property {
             $attributes[$column] = $this->$column;
         }
         return $attributes;
+
+    }
+
+    // Validation
+    public static function getErrors() {
+        return self::$errors;
+    }
+
+    public function validate() {
+        if (!$this->name) {
+            self::$errors[] = "<p><strong>Name</strong> missing</p>";
+        }
+        if (strlen($this->description) < 40) {
+            self::$errors[] = "<p>The <strong>Description</strong> must be at least 40 characters long.</p>";
+        }
+        return self::$errors;
 
     }
     

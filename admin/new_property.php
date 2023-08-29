@@ -4,8 +4,8 @@
 
   use App\Property; 
 
-  // Errors array
-  $errors = [];
+  // Error/success arrays
+  $errors = Property::getErrors();
   $success = [];
 
   // var declarations
@@ -42,8 +42,15 @@
 
   if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $property = new Property($_POST);
-    $property->save();
-    alertSuccess("property added");
+    $errors = $property->validate();
+
+    if (empty($errors)) {
+      $property->save();
+      alertSuccess("property added");
+    } else {
+      alertDangerFromArray($errors);
+    }
+
   }
 ?>
 <!doctype html>
