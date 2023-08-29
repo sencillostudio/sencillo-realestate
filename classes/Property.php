@@ -5,6 +5,7 @@ namespace App;
 class Property {
     // db 
     protected static $db;
+    protected static $dbColumns = ['id', 'name', 'description', 'address', 'type', 'neighborhood', 'city', 'county', 'state', 'rooms', 'bedrooms', 'bathrooms', 'services', 'square_feet', 'width', 'length', 'value', 'transaction', 'img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12', 'img13', 'img14', 'img15', 'button_1_text', 'button_2_text', 'button_3_text', 'button_4_text', 'button_5_text', 'button_6_text', 'button_7_text', 'doc1', 'doc2', 'doc3', 'doc4', 'doc5', 'doc6', 'doc7', 'video_iframe', 'map_iframe', 'private_notes', 'status', 'featured', 'code'];
 
     public $id;
     public $name;
@@ -59,6 +60,11 @@ class Property {
     public $status;
     public $featured;
     public $code;
+    
+    // Define Db
+    public static function setDB($database) {
+        self::$db = $database;
+    }
 
     public function __construct($args = [])
     {
@@ -118,14 +124,41 @@ class Property {
         
     }
     public function save() {
-        // query
-        $query = "INSERT INTO sre_properties(name, description, address, type, neighborhood, city, county, state, rooms, bedrooms, bathrooms, services, square_feet, width, length, value, transaction, button_1_text, button_2_text, button_3_text, button_4_text, button_5_text, button_6_text, button_7_text, video_iframe, map_iframe, private_notes, status, featured, code) VALUES ('$this->name','$this->description','$this->address','$this->type','$this->neighborhood','$this->city','$this->county','$this->state','$this->rooms','$this->bedrooms','$this->bathrooms','$this->services','$this->square_feet','$this->width','$this->length','$this->value','$this->transaction','$this->button_1_text','$this->button_2_text','$this->button_3_text','$this->button_4_text','$this->button_5_text','$this->button_6_text','$this->button_7_text','$this->video_iframe','$this->map_iframe','$this->private_notes','$this->status','$this->featured','$this->code')";
+        // sanitize data
+        $attributes = $this->sanitizeAttributes();
 
+        // Insert in database
+        $query = "INSERT INTO sre_properties(";
+        $query .= join(', ', array_keys($attributes));
+        $query .= ") VALUES ('";
+        $query .= join("', '", array_values($attributes));
+        $query .= " ') ";
+
+        // debug($query);
         $result = self::$db->query($query);
         // debug($result);
+        
     }
 
-    public static function setDB($database) {
-        self::$db = $database;
+    public function sanitizeAttributes() {
+        $attributes = $this->attributes();
+        $sanitized = [];
+
+        foreach ($attributes as $key => $value) {
+            $sanitized[$key] = self::$db->escape_string($value);
+        }
+        return $sanitized;
     }
+     
+    // identify and bind db attributes
+    public function attributes() {
+        $attributes = [];
+        foreach(self::$dbColumns as $column) {
+            if($column === 'id') continue;
+            $attributes[$column] = $this->$column;
+        }
+        return $attributes;
+
+    }
+    
 }
