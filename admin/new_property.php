@@ -45,10 +45,24 @@
     $errors = $property->validate();
 
     if (empty($errors)) {
-      $property->save();
-      alertSuccess("property added");
+      $result = $property->save();
+      
+      if($result) {
+        $success[] = "<p>Property added</p>";
+
+        $resultImg = uploadImages();
+        if ($resultImg) {
+          $success[] = "<p>Images added</p>";
+        }
+
+
+      }
     } else {
       alertDangerFromArray($errors);
+    }
+
+    if (!empty($success)) {
+      alertSuccessFromArray($success);
     }
 
   }

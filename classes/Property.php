@@ -137,9 +137,8 @@ class Property {
         $query .= join("', '", array_values($attributes));
         $query .= " ') ";
 
-        // debug($query);
         $result = self::$db->query($query);
-        // debug($result);
+        return $result;
         
     }
 
