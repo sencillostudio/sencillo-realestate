@@ -139,7 +139,10 @@ class Property {
 
         $result = self::$db->query($query);
         if ($result) {
-            $this->setCode();
+            $lastRowId = self::$db->insert_id;
+            $this->setCode($lastRowId);
+            $this->id = $lastRowId;
+            
         }
         return $result;
         
@@ -182,10 +185,8 @@ class Property {
 
     }
 
-    public function setCode() {
+    public function setCode($lastRowId) {
         $prefix = 'prop';
-       
-        $lastRowId = self::$db->insert_id;
         $code = $prefix . $lastRowId;
                    
         $updateCodeQuery = "UPDATE sre_properties SET code = ? WHERE id = ?";
