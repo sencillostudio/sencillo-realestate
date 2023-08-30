@@ -50,9 +50,15 @@
       if($result) {
         $success[] = "<p>Property added</p>";
 
+        $setCodeResult = $property->setCode();
+        if ($setCodeResult) {
+          $success[] = "<p>Property <strong>code</strong> added</p>";
+        }
+
+
         $resultImg = uploadImages();
         if ($resultImg) {
-          $success[] = "<p>Images added</p>";
+          $success[] = "<p><strong>Images</strong> added</p>";
         }
 
 

@@ -138,6 +138,9 @@ class Property {
         $query .= " ') ";
 
         $result = self::$db->query($query);
+        if ($result) {
+            $this->setCode();
+        }
         return $result;
         
     }
@@ -177,6 +180,20 @@ class Property {
         }
         return self::$errors;
 
+    }
+
+    public function setCode() {
+        $prefix = 'prop';
+       
+        $lastRowId = self::$db->insert_id;
+        $code = $prefix . $lastRowId;
+                   
+        $updateCodeQuery = "UPDATE sre_properties SET code = ? WHERE id = ?";
+        $stmt = self::$db->prepare($updateCodeQuery);
+        mysqli_stmt_bind_param($stmt, "si", $code, $lastRowId);
+        $setCodeResult = mysqli_stmt_execute($stmt);
+
+        return $setCodeResult;
     }
     
 }
