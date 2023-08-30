@@ -159,7 +159,7 @@ class Property {
     public function attributes() {
         $attributes = [];
         foreach(self::$dbColumns as $column) {
-            if($column === 'id') continue;
+            if($column === 'id' || $column === 'code') continue;
             $attributes[$column] = $this->$column;
         }
         return $attributes;
@@ -192,8 +192,11 @@ class Property {
         $stmt = self::$db->prepare($updateCodeQuery);
         mysqli_stmt_bind_param($stmt, "si", $code, $lastRowId);
         $setCodeResult = mysqli_stmt_execute($stmt);
+        if ($setCodeResult) {
+            $this->code = $code;
+        }
 
-        return $setCodeResult;
+        // return $setCodeResult;
     }
     
 }

@@ -48,12 +48,8 @@
       $result = $property->save();
       
       if($result) {
-        $success[] = "<p>Property added</p>";
-
-        $setCodeResult = $property->setCode();
-        if ($setCodeResult) {
-          $success[] = "<p>Property <strong>code</strong> added</p>";
-        }
+        $success[] = "<p><strong>Property</strong> added</p>";
+        $success[] = "<p>(" . $property->code . ")</p>";
 
 
         $resultImg = uploadImages();
