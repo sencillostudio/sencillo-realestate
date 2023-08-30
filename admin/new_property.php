@@ -51,8 +51,7 @@
         $success[] = "<p><strong>Property</strong> added</p>";
         $success[] = "<p>(" . $property->code . ")</p>";
 
-
-        $resultImg = uploadImages();
+        $resultImg = $property->uploadImages($galleryImagesNumber);
         if ($resultImg) {
           $success[] = "<p><strong>Images</strong> added</p>";
         }

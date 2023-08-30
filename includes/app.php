@@ -19,8 +19,10 @@
     // Base Url
     if ($env === 'local') {
         define('BASE_URL', 'http://localhost/sencillo-realestate');
+        define('BASE_DIR', 'D:/programfilesmz/xampp/htdocs/sencillo-realestate');
     } else {
         define('BASE_URL', 'https://mzdev.com.ar/projects/sencillo-realestate');
+        define('BASE_DIR', '/projects/sencillo-realestate');
     }
     // note: real BASE_URL will remain hidden in this public repo. Real info will exist only in dev (local) and in server.
 

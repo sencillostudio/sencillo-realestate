@@ -199,5 +199,21 @@ class Property {
 
         // return $setCodeResult;
     }
+
+    public function uploadImages($galleryImagesNumber) {
+
+        // Create img directory
+        $filesDir = BASE_DIR . "/files";
+        $imgDir = $filesDir . "/img";
+        if (!is_dir($filesDir)) {
+            mkdir($filesDir);
+        }
+        if (!is_dir($imgDir)) {
+            mkdir($imgDir);
+        }
+
+        
+        return true; // temp
+    }
     
 }

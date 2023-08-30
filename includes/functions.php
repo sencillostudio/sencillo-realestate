@@ -45,10 +45,5 @@
         echo "</div>";
     }
 
-    function uploadImages() {
-        debug("uploadImages was called");
-        return true;
-    }
-
     
 ?>
