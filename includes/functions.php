@@ -45,5 +45,19 @@
         echo "</div>";
     }
 
+    function createImageFromFormat($format, $route) {
+        switch ($format) {
+            case 'jpg':
+            case 'jpeg':
+                return imagecreatefromjpeg($route);
+            case 'png':
+                return imagecreatefrompng($route);
+            case 'gif':
+                return imagecreatefromgif($route);
+            default:
+                return false;
+        }
+    }
+
     
 ?>

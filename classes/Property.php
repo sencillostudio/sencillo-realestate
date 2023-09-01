@@ -200,7 +200,7 @@ class Property {
         // return $setCodeResult;
     }
 
-    public function uploadImages($galleryImagesNumber) {
+    public function uploadImages($files, $galleryImagesNumber) {
 
         // Create img directory
         $filesDir = BASE_DIR . "/files";
@@ -212,7 +212,57 @@ class Property {
             mkdir($imgDir);
         }
 
-        
+
+        // Upload images, convert to WebP, assign name and save URL in database
+        for ($i = 1; $i <= $galleryImagesNumber; $i++) { // don't use 0-index
+            $imgName = 'img' . $i;
+            $image = $files[$imgName];
+
+            if ($image['name']) {
+                $imageOriginalName = $image['name'];
+                $imageFileExtension = strtolower(pathinfo($imageOriginalName, PATHINFO_EXTENSION));
+                
+                // Verify image format
+                $allowedFormats=['jpg', 'jpeg', 'png', 'gif'];
+                if (in_array($imageFileExtension, $allowedFormats)) {
+                    $imageFileName = $this->code . $imgName;
+                    $originalImageRoute = $image['tmp_name'];
+
+                    // handle different formats and create original image
+                    $tempImageResource = createImageFromFormat($imageFileExtension, $originalImageRoute);
+                    
+                    // Verify original file size
+                    $originalFileSize = filesize($originalImageRoute); // Tamaño en bytes
+                    $originalFileSizeMB = $originalFileSize / (1024 * 1024); // conversión a MB
+
+                    // Quality of compression
+                    $compressionQuality = ($originalFileSizeMB < 1.5) ? 80 : 50;
+
+                    if ($tempImageResource) {
+                        // Convert to webp
+                        $webpImageRoute = $imgDir . '/' . $imageFileName . '.webp';
+                        imagewebp($tempImageResource, $webpImageRoute, $compressionQuality);
+                        imagedestroy($tempImageResource);
+
+                        // Save image url in database
+                        $finalUrl = BASE_URL . '/files/img/' . $imageFileName . '.webp';
+                        $updateUrlQuery = "UPDATE sre_properties SET $imgName = '$finalUrl' WHERE id = '$this->id'";
+                        $result = self::$db->query($updateUrlQuery);
+
+                    } else {
+                        self::$errors[] = "<p>error in image creation</p>";
+                    }
+
+
+
+                } else {
+                    // Image format not allowed
+                    self::$errors[] = "<p>Image <strong>format</strong> not allowed</p>";
+                }
+
+            }
+        }
+
         return true; // temp
     }
     
