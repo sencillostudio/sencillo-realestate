@@ -267,5 +267,10 @@ class Property {
         }
 
     }
+
+    public function uploadDocs($_FILES, $propertyDocsNumber) {
+        //
+        return true;
+    }
     
 }

@@ -56,6 +56,11 @@
           $success[] = "<p><strong>Images</strong> added</p>";
         }
 
+        $docsResult = $property->uploadDocs($_FILES, $propertyDocsNumber);
+        if ($docsResult) {
+          $success[] = "<p><strong>Docs</strong> uploaded</p>";
+        }
+
 
       }
     } else {
