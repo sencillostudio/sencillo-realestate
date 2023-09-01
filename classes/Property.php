@@ -248,9 +248,11 @@ class Property {
                         $finalUrl = BASE_URL . '/files/img/' . $imageFileName . '.webp';
                         $updateUrlQuery = "UPDATE sre_properties SET $imgName = '$finalUrl' WHERE id = '$this->id'";
                         $result = self::$db->query($updateUrlQuery);
+                        return $result;
 
                     } else {
                         self::$errors[] = "<p>error in image creation</p>";
+                        return false;
                     }
 
 
@@ -258,12 +260,12 @@ class Property {
                 } else {
                     // Image format not allowed
                     self::$errors[] = "<p>Image <strong>format</strong> not allowed</p>";
+                    return false;
                 }
 
             }
         }
 
-        return true; // temp
     }
     
 }
