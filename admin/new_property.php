@@ -56,7 +56,7 @@
           $success[] = "<p><strong>Images</strong> added</p>";
         }
 
-        $docsResult = $property->uploadDocs($_FILES, $propertyDocsNumber);
+        $docsResult = $property->uploadDocs($propertyDocsNumber);
         if ($docsResult) {
           $success[] = "<p><strong>Docs</strong> uploaded</p>";
         }
@@ -229,7 +229,7 @@
             </div>  -->
             <div class="fifth-block col-md-6 mt-4">
               <h3>Docs</h3>
-              <?php for ($i = 1; $i <= $propertyFilesNumber; $i++) : ?>
+              <?php for ($i = 1; $i <= $propertyDocsNumber; $i++) : ?>
                   <?php 
                       $btnTextVar = ${'button_' . $i . '_text'};
                   ?>

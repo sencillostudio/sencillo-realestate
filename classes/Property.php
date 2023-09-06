@@ -268,9 +268,33 @@ class Property {
 
     }
 
-    public function uploadDocs($_FILES, $propertyDocsNumber) {
-        //
-        return true;
-    }
-    
+    public function uploadDocs($propertyDocsNumber) {
+        
+        // Create docs directory
+        $filesDir = BASE_DIR . "/files"; // ver luego cómo evitar redundancia
+        $docsDir = $filesDir . "/docs";
+        if (!is_dir($filesDir)) {
+            mkdir($filesDir);
+        }
+        if (!is_dir($docsDir)) {
+            mkdir($docsDir);
+        } 
+
+        // Upload docs,assign name and save URL in database
+        for ($i = 1; $i <= $propertyDocsNumber; $i++) {
+            $docName = 'doc' . $i;
+            $document = $_FILES[$docName];
+
+            if ($document['name']) { 
+                $documentOriginalName = $document['name'];
+                $documentFileExtension = pathinfo($documentOriginalName, PATHINFO_EXTENSION);
+                $documentFileName = $this->code . $docName;
+                move_uploaded_file($document['tmp_name'], $docsDir . '/' . $documentFileName . "." . $documentFileExtension);// hasta acá revisado -> ya sube correctamente el archivo
+                $finalUrl = BASE_URL . '/files/docs/' . $documentFileName . "." . $documentFileExtension;
+                $updateUrlQuery = "UPDATE sre_properties SET $docName = '$finalUrl' WHERE id = '$this->id'";
+                $result = self::$db->query($updateUrlQuery);
+                return $result;
+            }
+        }
+    }    
 }
