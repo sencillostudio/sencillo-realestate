@@ -17,7 +17,7 @@
 
     <?php include_once '../includes/modules/subHeroSection.php' ?>
 
-    <section class="regSection">
+    <section class="reg-section reg-section-soft-gradient">
       <div class="container">
         <ul><a class="btn btn-primary" href="new_property.php">Create New Property</a></ul>
         <ul><a class="btn btn-primary" href="properties_list.php">See all properties</a></ul>
