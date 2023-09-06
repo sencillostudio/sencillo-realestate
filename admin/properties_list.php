@@ -1,6 +1,6 @@
 <?php
   require_once('../includes/app.php'); 
-  $pageTitle = "Admin Panel";
+  $pageTitle = "Properties List";
 
   // if (!$auth) {
 	// 	header('location: ../index.php');
@@ -19,8 +19,7 @@
 
     <section class="reg-section reg-section-soft-gradient">
       <div class="container">
-        <ul><a class="btn btn-primary" href="new_property.php">Create New Property</a></ul>
-        <ul><a class="btn btn-primary" href="properties_list.php">See all properties</a></ul>
+        <p>Properties go here</p>
       </div>
     </section>
 
