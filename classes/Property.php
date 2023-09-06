@@ -10,6 +10,9 @@ class Property {
     // Error messages array
     protected static $errors = [];
 
+    private $imagesUploadSuccess = true;
+    private $documentsUploadSuccess = true;
+
     public $id;
     public $name;
     public $description;
@@ -248,11 +251,15 @@ class Property {
                         $finalUrl = BASE_URL . '/files/img/' . $imageFileName . '.webp';
                         $updateUrlQuery = "UPDATE sre_properties SET $imgName = '$finalUrl' WHERE id = '$this->id'";
                         $result = self::$db->query($updateUrlQuery);
-                        return $result;
+                        
+                        if (!$result) {
+                            $this->imagesUploadSuccess = false;
+                        }
 
                     } else {
                         self::$errors[] = "<p>error in image creation</p>";
-                        return false;
+                        $this->imagesUploadSuccess = false;
+
                     }
 
 
@@ -265,6 +272,7 @@ class Property {
 
             }
         }
+        return $this->imagesUploadSuccess;
 
     }
 
@@ -293,8 +301,12 @@ class Property {
                 $finalUrl = BASE_URL . '/files/docs/' . $documentFileName . "." . $documentFileExtension;
                 $updateUrlQuery = "UPDATE sre_properties SET $docName = '$finalUrl' WHERE id = '$this->id'";
                 $result = self::$db->query($updateUrlQuery);
-                return $result;
+                if (!$result) {
+                    $this->documentsUploadSuccess = false;
+                }
             }
         }
+
+        return $this->documentsUploadSuccess;
     }    
 }
