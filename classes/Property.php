@@ -200,7 +200,7 @@ class Property {
         // return $setCodeResult;
     }
 
-    public function uploadImages($files, $galleryImagesNumber) {
+    public function uploadImages($galleryImagesNumber) {
 
         // Create img directory
         $filesDir = BASE_DIR . "/files";
@@ -216,7 +216,7 @@ class Property {
         // Upload images, convert to WebP, assign name and save URL in database
         for ($i = 1; $i <= $galleryImagesNumber; $i++) { // don't use 0-index
             $imgName = 'img' . $i;
-            $image = $files[$imgName];
+            $image = $_FILES[$imgName];
 
             if ($image['name']) {
                 $imageOriginalName = $image['name'];
