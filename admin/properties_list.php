@@ -17,11 +17,7 @@
 
     <?php include_once '../includes/modules/subHeroSection.php' ?>
 
-    <section class="reg-section reg-section-soft-gradient">
-      <div class="container">
-        <p>Properties go here</p>
-      </div>
-    </section>
+    <?php include_once '../includes/modules/adminCardsSection.php'?>
 
     <?php include_once '../includes/modules/postFooterSection.php'?>
     
