@@ -309,4 +309,38 @@ class Property {
 
         return $this->documentsUploadSuccess;
     }    
+
+    // Get all properties
+    public static function all() {
+        $query = "SELECT * FROM sre_properties";
+        $result = self::executeSQL($query);
+        return $result;
+
+    }
+    
+    public static function executeSQL($query) {
+        $result = self::$db->query($query);
+        
+        // iterate over results (rows)
+        $array = [];
+        while ($row = $result->fetch_assoc()) {
+            $array[] = self::createObject($row);
+        }
+
+        $result->free(); // free memory
+
+        return $array;
+    }
+
+    protected static function createObject($row) {
+        $object = new self;
+
+        foreach($row as $key=>$value) {
+            if(property_exists($object, $key)) {
+                $object->$key = $value;
+            }
+            
+        }
+        return $object;
+    }
 }

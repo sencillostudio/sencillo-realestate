@@ -2,9 +2,16 @@
   require_once('../includes/app.php'); 
   $pageTitle = "Properties List";
 
+  use App\Property;
+
   // if (!$auth) {
 	// 	header('location: ../index.php');
 	// }
+
+  // implement method for gettting all properties
+  $properties = Property::all();
+
+  
 ?>
 <!doctype html>
 <html lang="en">
