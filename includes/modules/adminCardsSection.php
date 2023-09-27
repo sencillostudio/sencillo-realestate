@@ -1,3 +1,6 @@
+<?php
+    $placeholderImg = BASE_URL . "/src/img/misc/property-cover-placeholder.png";
+?>
 <section class="cardsSection">
     <div class="container">
         <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-lg-4 g-3">
@@ -5,7 +8,8 @@
             <div class="col">
                 <div href="property.php" class="card" >
                     <div class="card-cover">
-                        <img src="<?php echo $property->img1 ?>" class="card-img-top" alt="...">
+                        <!-- <img src="<?php echo $property->img1 ?>" class="card-img-top" alt="..."> -->
+                        <img src="<?php echo $property->img1 ? $property->img1 : $placeholderImg ?>" class="card-img-top" alt="property image">
                     </div>
                     <div class="card-content">
                         <h5 class="card-title"><?php echo $property->name ?></h5>
