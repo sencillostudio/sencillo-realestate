@@ -59,5 +59,11 @@
         }
     }
 
+    // Crear nueva función para sanitizar datos
+    function escapeHTML($html) : string {
+        $s = htmlspecialchars($html);
+        return $s;
+    }
+
     
 ?>
