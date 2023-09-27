@@ -4,40 +4,11 @@
 
   use App\Property; 
 
+  $property = new Property;
+
   // Error/success arrays
   $errors = Property::getErrors();
   $success = [];
-
-  // var declarations
-  $name = "";
-  $description = "";
-  $address = "";
-  $type = "";
-  $neighborhood = "";
-  $city = "";
-  $county = "";
-  $state = "";
-  $rooms = "";
-  $bedrooms = "";
-  $bathrooms = "";
-  $services = "";
-  $square_feet = "";
-  $width = "";
-  $length = "";
-  $value = "";
-  $transaction = "";
-  $button_1_text = "";
-  $button_2_text = "";
-  $button_3_text = "";
-  $button_4_text = "";
-  $button_5_text = "";
-  $button_6_text = "";
-  $button_7_text = "";
-  $video_iframe = "";
-  $map_iframe = "";
-  $private_notes = "";
-  $status = "";
-  $featured = "";
 
 
   if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -92,95 +63,95 @@
               <h3>Property Info</h3>
               <label for="name" class="form-label">Name</label>
               <p><small> (required field)</small></p>
-              <input type="text" name="name" id="name" class="form-control" value="<?php echo $name ?>" required>
+              <input type="text" name="name" id="name" class="form-control" value="<?php echo escapeHTML($property->name); ?>" required>
 
               <label for="description" class="form-label">Description</label>
               <p><small> (required field)</small></p>
-              <textarea name="description" id="description" maxlength="1200" class="form-control" required><?php echo $description ?></textarea>
+              <textarea name="description" id="description" maxlength="1200" class="form-control" required><?php echo escapeHTML($property->description); ?></textarea>
 
               <label for="address" class="form-label">Address</label>
-              <input type="text" name="address" id="address" class="form-control" value="<?php echo $address ?>">
+              <input type="text" name="address" id="address" class="form-control" value="<?php echo escapeHTML($property->address); ?>">
 
               <label for="type">Type</label>
               <select name="type" id="type" class="form-select">
                   <option value="">Elija una opción</option>
-                  <option <?php echo $type === 'house' ? 'selected' : '' ?> value="casa">House</option>
-                  <option <?php echo $type === 'apartment' ? 'selected' : '' ?> value="departamento">Apartment</option>
-                  <option <?php echo $type === 'condo' ? 'selected' : '' ?> value="local">Condo</option>
-                  <option <?php echo $type === 'land' ? 'selected' : '' ?> value="PH">Lot/Land</option>
+                  <option <?php echo $property->type === 'house' ? 'selected' : '' ?> value="house">House</option>
+                  <option <?php echo $property->type === 'apartment' ? 'selected' : '' ?> value="apartment">Apartment</option>
+                  <option <?php echo $property->type === 'condo' ? 'selected' : '' ?> value="condo">Condo</option>
+                  <option <?php echo $property->type === 'land' ? 'selected' : '' ?> value="land">Lot/Land</option>
               </select>
 
               <label for="neighborhood">Neighborhood</label>
-              <input type="text" name="neighborhood" id="neighborhood" class="form-control" value="<?php echo $neighborhood ?>">
+              <input type="text" name="neighborhood" id="neighborhood" class="form-control" value="<?php echo escapeHTML($property->neighborhood) ?>">
 
               <label for="city">City</label>
-              <input type="text" name="city" id="city" class="form-control" value="<?php echo $city ?>">
+              <input type="text" name="city" id="city" class="form-control" value="<?php echo escapeHTML($property->city) ?>">
 
               <label for="county">County</label>
-              <input type="text" name="county" id="county" class="form-control" value="<?php echo $county ?>">
+              <input type="text" name="county" id="county" class="form-control" value="<?php echo escapeHTML($property->county) ?>">
 
               <label for="state">State</label>
-              <input type="text" name="state" id="state" class="form-control" value="<?php echo $state ?>">
+              <input type="text" name="state" id="state" class="form-control" value="<?php echo escapeHTML($property->state) ?>">
 
               <label for="rooms">Rooms</label>
               <select name="rooms" id="rooms" class="form-select">
-                  <option <?php echo $rooms == '1' ? 'selected' : '' ?> value="1">1</option>
-                  <option <?php echo $rooms == '2' ? 'selected' : '' ?> value="2">2</option>
-                  <option <?php echo $rooms == '3' ? 'selected' : '' ?> value="3">3</option>
-                  <option <?php echo $rooms == '4' ? 'selected' : '' ?> value="4">4</option>
-                  <option <?php echo $rooms == '5' ? 'selected' : '' ?> value="5">5</option>
-                  <option <?php echo $rooms == '6' ? 'selected' : '' ?> value="6">6</option>
-                  <option <?php echo $rooms == '7' ? 'selected' : '' ?> value="7">7</option>
-                  <option <?php echo $rooms == '8' ? 'selected' : '' ?> value="8">8</option>
-                  <option <?php echo $rooms == '9' ? 'selected' : '' ?> value="9">9</option>
-                  <option <?php echo $rooms == '10' ? 'selected' : '' ?> value="10">10</option>
+                  <option <?php echo $property->rooms == '1' ? 'selected' : '' ?> value="1">1</option>
+                  <option <?php echo $property->rooms == '2' ? 'selected' : '' ?> value="2">2</option>
+                  <option <?php echo $property->rooms == '3' ? 'selected' : '' ?> value="3">3</option>
+                  <option <?php echo $property->rooms == '4' ? 'selected' : '' ?> value="4">4</option>
+                  <option <?php echo $property->rooms == '5' ? 'selected' : '' ?> value="5">5</option>
+                  <option <?php echo $property->rooms == '6' ? 'selected' : '' ?> value="6">6</option>
+                  <option <?php echo $property->rooms == '7' ? 'selected' : '' ?> value="7">7</option>
+                  <option <?php echo $property->rooms == '8' ? 'selected' : '' ?> value="8">8</option>
+                  <option <?php echo $property->rooms == '9' ? 'selected' : '' ?> value="9">9</option>
+                  <option <?php echo $property->rooms == '10' ? 'selected' : '' ?> value="10">10</option>
               </select>
 
               <label for="bedrooms">Bedrooms</label>
               <select name="bedrooms" id="bedrooms" class="form-select">
-                  <option <?php echo $bedrooms == '1' ? 'selected' : '' ?> value="1">1</option>
-                  <option <?php echo $bedrooms == '2' ? 'selected' : '' ?> value="2">2</option>
-                  <option <?php echo $bedrooms == '3' ? 'selected' : '' ?> value="3">3</option>
-                  <option <?php echo $bedrooms == '4' ? 'selected' : '' ?> value="4">4</option>
-                  <option <?php echo $bedrooms == '5' ? 'selected' : '' ?> value="5">5</option>
-                  <option <?php echo $bedrooms == '6' ? 'selected' : '' ?> value="6">6</option>
-                  <option <?php echo $bedrooms == '7' ? 'selected' : '' ?> value="7">7</option>
-                  <option <?php echo $bedrooms == '8' ? 'selected' : '' ?> value="8">8</option>
-                  <option <?php echo $bedrooms == '9' ? 'selected' : '' ?> value="9">9</option>
-                  <option <?php echo $bedrooms == '10' ? 'selected' : '' ?> value="10">10</option>
+                  <option <?php echo $property->bedrooms == '1' ? 'selected' : '' ?> value="1">1</option>
+                  <option <?php echo $property->bedrooms == '2' ? 'selected' : '' ?> value="2">2</option>
+                  <option <?php echo $property->bedrooms == '3' ? 'selected' : '' ?> value="3">3</option>
+                  <option <?php echo $property->bedrooms == '4' ? 'selected' : '' ?> value="4">4</option>
+                  <option <?php echo $property->bedrooms == '5' ? 'selected' : '' ?> value="5">5</option>
+                  <option <?php echo $property->bedrooms == '6' ? 'selected' : '' ?> value="6">6</option>
+                  <option <?php echo $property->bedrooms == '7' ? 'selected' : '' ?> value="7">7</option>
+                  <option <?php echo $property->bedrooms == '8' ? 'selected' : '' ?> value="8">8</option>
+                  <option <?php echo $property->bedrooms == '9' ? 'selected' : '' ?> value="9">9</option>
+                  <option <?php echo $property->bedrooms == '10' ? 'selected' : '' ?> value="10">10</option>
               </select>
               
               <label for="bathrooms">Bathrooms</label>
               <select name="bathrooms" id="bathrooms" class="form-select">
-                  <option <?php echo $bathrooms == '1' ? 'selected' : '' ?> value="1">1</option>
-                  <option <?php echo $bathrooms == '2' ? 'selected' : '' ?> value="2">2</option>
-                  <option <?php echo $bathrooms == '3' ? 'selected' : '' ?> value="3">3</option>
-                  <option <?php echo $bathrooms == '4' ? 'selected' : '' ?> value="4">4</option>
-                  <option <?php echo $bathrooms == '5' ? 'selected' : '' ?> value="5">5</option>
-                  <option <?php echo $bathrooms == '6' ? 'selected' : '' ?> value="6">6</option>
-                  <option <?php echo $bathrooms == '7' ? 'selected' : '' ?> value="7">7</option>
-                  <option <?php echo $bathrooms == '8' ? 'selected' : '' ?> value="8">8</option>
-                  <option <?php echo $bathrooms == '9' ? 'selected' : '' ?> value="9">9</option>
-                  <option <?php echo $bathrooms == '10' ? 'selected' : '' ?> value="10">10</option>
+                  <option <?php echo $property->bathrooms == '1' ? 'selected' : '' ?> value="1">1</option>
+                  <option <?php echo $property->bathrooms == '2' ? 'selected' : '' ?> value="2">2</option>
+                  <option <?php echo $property->bathrooms == '3' ? 'selected' : '' ?> value="3">3</option>
+                  <option <?php echo $property->bathrooms == '4' ? 'selected' : '' ?> value="4">4</option>
+                  <option <?php echo $property->bathrooms == '5' ? 'selected' : '' ?> value="5">5</option>
+                  <option <?php echo $property->bathrooms == '6' ? 'selected' : '' ?> value="6">6</option>
+                  <option <?php echo $property->bathrooms == '7' ? 'selected' : '' ?> value="7">7</option>
+                  <option <?php echo $property->bathrooms == '8' ? 'selected' : '' ?> value="8">8</option>
+                  <option <?php echo $property->bathrooms == '9' ? 'selected' : '' ?> value="9">9</option>
+                  <option <?php echo $property->bathrooms == '10' ? 'selected' : '' ?> value="10">10</option>
               </select>
 
               <label for="services">Services</label>
-              <input type="text" name="services" id="services" class="form-control" value="<?php echo $services ?>">
+              <input type="text" name="services" id="services" class="form-control" value="<?php echo escapeHTML($property->services) ?>">
 
               <label for="square_feet">Square feet</label>
-              <input type="text" name="square_feet" id="square_feet" class="form-control" value="<?php echo $square_feet ?>">
+              <input type="text" name="square_feet" id="square_feet" class="form-control" value="<?php echo escapeHTML($property->square_feet) ?>">
 
               <label for="length">Lenght</label>
-              <input type="text" name="length" id="length" class="form-control" value="<?php echo $length ?>">
+              <input type="text" name="length" id="length" class="form-control" value="<?php echo escapeHTML($property->length) ?>">
 
               <label for="width">Width</label>
-              <input type="text" name="width" id="width" class="form-control" value="<?php echo $width ?>">
+              <input type="text" name="width" id="width" class="form-control" value="<?php echo escapeHTML($property->width) ?>">
 
               <label for="value">Value</label>
-              <input type="text" name="value" id="value" class="form-control" value="<?php echo $value ?>">
+              <input type="text" name="value" id="value" class="form-control" value="<?php echo escapeHTML($property->value) ?>">
 
               <label for="transaction">Transaction</label>
-              <input type="text" name="transaction" id="transaction" class="form-control" value="<?php echo $transaction ?>">
+              <input type="text" name="transaction" id="transaction" class="form-control" value="<?php echo escapeHTML($property->transaction) ?>">
 
 
             </div>
@@ -189,26 +160,26 @@
               <h3>Config</h3>
               <label for="status">Status</label>
               <select name="status" id="status" class="form-select">
-                  <option <?php echo $status === 'hidden' ? 'selected' : '' ?> value="hidden">Hidden</option>
-                  <option <?php echo $status === 'paused' ? 'selected' : '' ?> value="paused">Paused</option>
-                  <option <?php echo $status === 'active' ? 'selected' : '' ?> value="active">Active</option>
-                  <option <?php echo $status === 'reserved' ? 'selected' : '' ?> value="reserved">Reserved</option>
+                  <option <?php echo $property->status === 'hidden' ? 'selected' : '' ?> value="hidden">Hidden</option>
+                  <option <?php echo $property->status === 'paused' ? 'selected' : '' ?> value="paused">Paused</option>
+                  <option <?php echo $property->status === 'active' ? 'selected' : '' ?> value="active">Active</option>
+                  <option <?php echo $property->status === 'reserved' ? 'selected' : '' ?> value="reserved">Reserved</option>
               </select>
               
               <label for="map_iframe">Map iframe</label>
-              <textarea name="map_iframe" id="map_iframe" minlength="10" maxlength="2000" class="form-control"><?php echo $map_iframe ?></textarea>
+              <textarea name="map_iframe" id="map_iframe" minlength="10" maxlength="2000" class="form-control"><?php echo escapeHTML($property->map_iframe) ?></textarea>
 
               <label for="video_iframe">Video iframe</label>
-              <textarea name="video_iframe" id="video_iframe" minlength="10" maxlength="2000" class="form-control"><?php echo $video_iframe ?></textarea>
+              <textarea name="video_iframe" id="video_iframe" minlength="10" maxlength="2000" class="form-control"><?php echo escapeHTML($property->video_iframe) ?></textarea>
 
               <label for="featured">¿Featured property?</label>
               <select name="featured" id="featured" class="form-select">
-                  <option <?php echo $featured == '0' ? 'selected' : '' ?> value="0">No</option>
-                  <option <?php echo $featured == '1' ? 'selected' : '' ?> value="1">Yes</option>
+                  <option <?php echo $property->featured == '0' ? 'selected' : '' ?> value="0">No</option>
+                  <option <?php echo $property->featured == '1' ? 'selected' : '' ?> value="1">Yes</option>
               </select>
 
               <label for="private_notes">Private Notes</label>
-              <textarea name="private_notes" id="private_notes" minlength="10" maxlength="2000" class="form-control"><?php echo $private_notes ?></textarea>
+              <textarea name="private_notes" id="private_notes" minlength="10" maxlength="2000" class="form-control"><?php echo escapeHTML($property->private_notes) ?></textarea>
 
             </div>  
           </div>
