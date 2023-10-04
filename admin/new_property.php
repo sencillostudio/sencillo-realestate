@@ -202,12 +202,13 @@
               <h3>Docs</h3>
               <?php for ($i = 1; $i <= $propertyDocsNumber; $i++) : ?>
                   <?php 
-                      $btnTextVar = ${'button_' . $i . '_text'};
+                      $btnTextVarName = 'button_' . $i . '_text';
+                      $btnTextValue = $property->$btnTextVarName;
                   ?>
                   <div class="add-file">
                       <h4 class="title title-main">Doc <?php echo $i; ?></h4>
-                      <label for="button_<?php echo $i; ?>_text" class="titulo">Button text: </label>
-                      <input type="text" name="button_<?php echo $i; ?>_text" class="form-control" id="button_<?php echo $i; ?>_text" value="<?php echo $btnTextVar ?>">
+                      <label for="<?php echo $btnTextVarName; ?>" class="titulo">Button text: </label>
+                      <input type="text" name="<?php echo $btnTextVarName; ?>" class="form-control" id="<?php echo $btnTextVarName; ?>" value="<?php echo $btnTextValue ?>">
                       <br>
                       <label for="file<?php echo $i; ?>" class="titulo">File: </label>
                       <input type="file" name="doc<?php echo $i; ?>" id="file<?php echo $i; ?>" accept="application/pdf, .txt, image/*" /> 
