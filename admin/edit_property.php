@@ -221,19 +221,19 @@
                 <?php endif; ?>
 
                 <!-- Resto de las imágenes -->
-                <!-- <?php
-                for ($i = 2; $i <= 20; $i++) {
-                    $nombreImagen = 'img' . $i;
-                    if ($propiedad[$nombreImagen]) :
+                <?php
+                for ($i = 2; $i <= $galleryImagesNumber; $i++) {
+                    $imgName = 'img' . $i;
+                    if ($property->$imgName) :
                     //obtener nuevamente la extensión de img y crear el nombre del archivo
-                    $imgUrl = $propiedad[$nombreImagen];
+                    $imgUrl = $property->$imgName;
                     $extension = preg_replace('/^.*\.([^.]+)$/D', '$1', basename($imgUrl));
-                    $imagenFileName = $codigo . $nombreImagen . '.' .  $extension;
+                    $imagenFileName = 'prop' . $propId . $imgName . '.' .  $extension;
                 ?>
                     <div class="thumbnail-wrapper">
                         <p class="title"><?php echo "img $i" ?></p>
-                        <img src="<?php echo $propiedad[$nombreImagen] ?>" alt="thumbnail-<?php echo $i ?>" class="thumb">
-                        <a class="btn btn-danger" href="task_eliminar_img.php?codigo=<?php echo $codigo ?>&imgName=<?php echo $nombreImagen ?>&imgFile=<?php echo $imagenFileName ?>">eliminar</a>
+                        <img src="<?php echo $property->$imgName ?>" alt="thumbnail-<?php echo $i ?>" class="thumb">
+                        <a class="btn btn-danger" href="task_eliminar_img.php?codigo=<?php echo $codigo ?>&imgName=<?php echo $imgName ?>&imgFile=<?php echo $imagenFileName ?>">eliminar</a>
                         
 
                     </div>
@@ -241,7 +241,7 @@
                 <?php 
                     endif;
                 }
-                ?> -->
+                ?>
             </div>
             </div> 
             
