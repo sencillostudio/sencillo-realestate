@@ -4,14 +4,14 @@
 
   use App\Property; 
 
-  $id = $_GET['id'];
-  $id = filter_var($id, FILTER_VALIDATE_INT);
+  $propId = $_GET['id'];
+  $propId = filter_var($propId, FILTER_VALIDATE_INT);
 
-  if(!$id) {
+  if(!$propId) {
     header('location: ../index.php'); 
   }
 
-  $property = Property::find($id);
+  $property = Property::find($propId);
 
 
 
@@ -64,7 +64,7 @@
 
     <?php include_once '../includes/modules/subHeroSection.php' ?>
 
-    <section class="newPropertyForm">
+    <section class="editPropertyForm">
       <div class="container">
         <form method="post" enctype="multipart/form-data">
           <div class="row">
@@ -205,8 +205,46 @@
             </div>  
           
             <div class="fourth-block col-md-6 mt-4">
-              <p><strong>Img thumbnails here</strong>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quos blanditiis inventore laudantium possimus dolor asperiores repudiandae doloremque numquam, velit unde quo, quas placeat voluptatem distinctio magnam iure! Nobis, itaque!</p>
+            <div class="thumbs-wrapper">
+                <!-- Img Destacada -->
+                <?php if ($property->img1) : ?>
+                    <?php 
+                        $imgUrl = $property->img1;
+                        $extension = preg_replace('/^.*\.([^.]+)$/D', '$1', basename($imgUrl));
+                        $imagenFileName = $propId . 'img1' . '.' .  $extension;  
+                    ?>
+                    <div class="thumbnail-wrapper thumbnail-wrapper-first">
+                        <p class="title">img 1 (Destacada)</p>
+                        <img src="<?php echo $property->img1 ?>" alt="thumbnail-1" class="thumb">
+                        <a class="btn btn-danger" href="task_eliminar_img.php?propId=<?php echo $codigo ?>&imgName=img1&imgFile=<?php echo $imagenFileName ?>">eliminar</a>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Resto de las imágenes -->
+                <!-- <?php
+                for ($i = 2; $i <= 20; $i++) {
+                    $nombreImagen = 'img' . $i;
+                    if ($propiedad[$nombreImagen]) :
+                    //obtener nuevamente la extensión de img y crear el nombre del archivo
+                    $imgUrl = $propiedad[$nombreImagen];
+                    $extension = preg_replace('/^.*\.([^.]+)$/D', '$1', basename($imgUrl));
+                    $imagenFileName = $codigo . $nombreImagen . '.' .  $extension;
+                ?>
+                    <div class="thumbnail-wrapper">
+                        <p class="title"><?php echo "img $i" ?></p>
+                        <img src="<?php echo $propiedad[$nombreImagen] ?>" alt="thumbnail-<?php echo $i ?>" class="thumb">
+                        <a class="btn btn-danger" href="task_eliminar_img.php?codigo=<?php echo $codigo ?>&imgName=<?php echo $nombreImagen ?>&imgFile=<?php echo $imagenFileName ?>">eliminar</a>
+                        
+
+                    </div>
+
+                <?php 
+                    endif;
+                }
+                ?> -->
+            </div>
             </div> 
+            
 
             <div class="fifth-block col-md-6 mt-4">
               <h3>Docs</h3>

@@ -33,3 +33,44 @@
             justify-content: center
             .btn
                 margin-top: 2rem
+
+    .thumbs-wrapper
+        display: flex
+        flex-direction: row
+        // background: green
+        width: 100%
+        flex-wrap: wrap
+
+        .thumbnail-wrapper
+            background: $theme-light
+            border-radius: 0.5rem
+            display: flex
+            text-align: center
+            flex-direction: column
+            justify-content: center
+            width: 5.5rem
+            margin: 0.15rem
+            padding: 0.3rem
+            img
+                width: 100%
+                height: auto
+            p
+                font-size: 1rem
+                font-weight: bold
+
+            a.btn
+                font-size: 0.8rem
+                padding: 0.3rem 0.4rem
+                margin: 0.3rem
+                display: inline
+                width: 4rem
+                text-align: center
+                margin-left: auto
+                margin-right: auto
+                
+
+            &-first
+                width: 100%
+                img
+                    width: 100%
+                    height: auto
