@@ -317,6 +317,14 @@ class Property {
         return $result;
 
     }
+
+    // Get property by id
+    public static function find($id) {
+        $query = "SELECT * FROM sre_properties WHERE id = {$id}";
+        $result = self::executeSQL($query);
+        return array_shift($result);
+        
+    }
     
     public static function executeSQL($query) {
         $result = self::$db->query($query);
