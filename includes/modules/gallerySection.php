@@ -7,6 +7,15 @@
     $elemento['img5'] = 'https://picsum.photos/600/304';
     $elemento['img6'] = 'https://picsum.photos/600/305';
     $elemento['img7'] = 'https://picsum.photos/600/306';
+    $elemento['img8'] = 'https://picsum.photos/600/307';
+    $elemento['img9'] = 'https://picsum.photos/600/308';
+    $elemento['img10'] = 'https://picsum.photos/600/309';
+    $elemento['img11'] = 'https://picsum.photos/600/310';
+    $elemento['img12'] = 'https://picsum.photos/600/311';
+    $elemento['img13'] = 'https://picsum.photos/600/312';
+    $elemento['img14'] = 'https://picsum.photos/600/313';
+    $elemento['img15'] = 'https://picsum.photos/600/314';
+
       
 ?>
 <section class="gallery reg-section reg-section-soft-gradient">
