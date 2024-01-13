@@ -1,7 +1,7 @@
 <?php
 
 // Misc
-$galleryImagesNumber = 15;
+$galleryImagesNumber = 7;
 $propertyDocsNumber = 7;
 
 // Contact form config
